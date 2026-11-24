@@ -7,6 +7,16 @@
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        // Constructor
+        public Admin(string userName, string password)
+        {
+            UserName = userName;
+            Password = password;
+        }
+
+
+
+
         // ToString method
         public override string ToString()
         {
