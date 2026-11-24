@@ -4,14 +4,14 @@
     {
         // properties
         public int Id { get; set; }
-        public int SpotNumber { get; set; }
-        public bool IsOccupied { get; set; }
-        public string Zone { get; set; }
+        public string Zone { get; set; } = string.Empty;
+        public int Capacity { get; set; }
+        public int AvailableSpots { get; set; }
+        public bool IsFull { get; set; }
 
-        // ToString method
         public override string ToString()
         {
-            return $"Parking Spot Id: {Id}, Spot Number: {SpotNumber}, Is Occupied: {IsOccupied}, Zone: {Zone}";
+            return $"Id: {Id} Zone: {Zone} Capacity: {Capacity} AvailableSpots: {AvailableSpots} IsFull: {IsFull}";
         }
     }
 }

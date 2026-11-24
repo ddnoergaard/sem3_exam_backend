@@ -12,19 +12,13 @@ namespace api.Repositories
             if (includeData)
             {
                 // Zone A
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 1, IsOccupied = false, Zone = "A" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 2, IsOccupied = false, Zone = "A" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 3, IsOccupied = true, Zone = "A" });
+                parkingSpots.Add(new ParkingSpot { Id = NextId++, Zone = "A", Capacity = 6, AvailableSpots = 6 });
 
                 // Zone B
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 1, IsOccupied = false, Zone = "B" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 2, IsOccupied = false, Zone = "B" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 3, IsOccupied = true, Zone = "B" });
+                parkingSpots.Add(new ParkingSpot { Id = NextId++, Zone = "B", Capacity = 10, AvailableSpots = 10 });
 
                 // Zone C
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 1, IsOccupied = false, Zone = "C" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 2, IsOccupied = false, Zone = "C" });
-                parkingSpots.Add(new ParkingSpot { Id = NextId++, SpotNumber = 3, IsOccupied = true, Zone = "C" });
+                parkingSpots.Add(new ParkingSpot { Id = NextId++, Zone = "C", Capacity = 4, AvailableSpots = 4 });
             }
         }
 
@@ -49,13 +43,5 @@ namespace api.Repositories
             ParkingSpot? spot = parkingSpots.FirstOrDefault(spot => spot.Id == id);
             return spot is not null ? spot : null;
         }
-
-        //IsParkingSpotOccupied method ----- VI SÆTTER DEN TIL ET SERVICE LAG SOME TIME -----
-        //public bool IsParkingSpotOccupied(int id)
-        //{
-        //    ParkingSpot? spot = GetById(id);
-        //    return spot.IsOccupied;
-
-        //}
     }
 }
