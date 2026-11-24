@@ -20,7 +20,16 @@ namespace api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
 
-        public ActionResult<>
+        public ActionResult<IEnumerable<ParkingSpot>> GetAll()
+        {
+            IEnumerable<ParkingSpot> spots = _parkingSpotRepository.GetAll();
+
+            if (spots.Count () == 0)
+            {
+                return NoContent();
+            }
+            return Ok(spots);
+        }
 
 
 

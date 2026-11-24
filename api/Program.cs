@@ -1,8 +1,13 @@
+using api.Repositories;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<ParkingSpotRepository>();
+builder.Services.AddSingleton<AdminRepository>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
